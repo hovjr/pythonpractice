@@ -17,7 +17,6 @@ for i in data_import["Row Type"]:
         counter += 1
     column_values.append(counter)
 
-data_import = data_import
 data_import["Iteration"] = column_values
 
 data_import = data_import[data_import["Row Type"] != "Row Type"]
