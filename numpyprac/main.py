@@ -81,14 +81,11 @@ a = np.array([[1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14]])
 # stats
 stats = np.array([[1, 2, 3], [4, 5, 6]])
 
-# print(np.average(stats))
-# print(np.max(stats, axis=1))
-#
-# before = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
-# print(before)
-#
-# after = before.reshape((4, 2))
-# print(after)
+# random numbers
+# randoz = np.random.rand(4, 2)
+# randoz = np.random.random_sample(a.shape)
+# randoz = np.random.randint(-344, 7, size=a.shape)
+# print(randoz)
 
 # stacking vectors
 # v1 = np.array([1, 2, 3, 4])
