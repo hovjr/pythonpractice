@@ -10,14 +10,6 @@ data_import.drop(columns=['Unnamed: 9', 'Unnamed: 10'], inplace=True)
 
 data_import.dropna(how='all', axis=0, inplace=True)
 
-# print(data_import.iloc[0]["Row Type"])
-
-# print(data_import.iloc[0]["Row Type"] == "first name: Person")
-
-# for i in data_import["Row Type"]:
-#     if "first name" in i:
-#         data_import.drop(i, axis=0, inplace=True)
-
 column_values = []
 counter = 0
 for i in data_import["Row Type"]:
