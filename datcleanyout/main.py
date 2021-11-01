@@ -46,5 +46,6 @@ cleandf.drop(columns=["Iteration"], inplace=True)
 print(cleandf.head(50))
 
 print("test push")
+print("eat shit")
 
 cleandf.to_csv("Clean_Df.csv", index=False)
