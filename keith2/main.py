@@ -1,7 +1,5 @@
 import pandas as pd
 import os
-import datetime
-from datetime import datetime as dt
 import matplotlib.pyplot as plt
 
 pd.set_option('display.width', 400)
