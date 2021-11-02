@@ -110,13 +110,6 @@ products = [product for product, i in all_data.groupby('Product')]
 
 prices = all_data.groupby("Product")["Price Each"].mean()
 
-print(prices)
-
-# plt.bar(products, quantity_ordered)
-# plt.xticks(products, rotation='vertical', size=8)
-# plt.ylabel("quant")
-# plt.xlabel("product")
-
 fig, ax1 = plt.subplots()
 ax2 = ax1.twinx()
 ax1.bar(products, quantity_ordered)
