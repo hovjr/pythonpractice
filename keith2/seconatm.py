@@ -41,8 +41,37 @@ bestsales.reset_index(inplace=True)
 # plt.ylabel("Sales in usd")
 # plt.xlabel("Month numb")
 # plt.show()
+# print(bestsales)
 
-print(df)
-print(bestsales)
+df["City"] = df["Purchase Address"].str.split(", ", expand=True)[1]
+df["State"] = (df["Purchase Address"].str.split(", ", expand=True)[2]).str.split(" ", expand=True)[0]
+df["City + state"] = df["City"] + " " + df["State"]
 
-# yih
+citysales = df.groupby("City + state").sum().reset_index()
+cities = [i for i, mydf in citysales.groupby('City + state')]
+# plt.bar(cities, citysales['Sales'])
+# plt.xticks(cities, rotation='vertical', size=8)
+# plt.ylabel("Sales in usd")
+# plt.xlabel("City")
+# plt.show()
+
+
+orderdf = df[df['Order ID'].duplicated(keep=False)].copy()
+
+orderdf["Grouped"] = orderdf.groupby('Order ID')['Product'].transform(lambda x: ', '.join(x))
+
+orderdf = orderdf[['Order ID', 'Grouped']].drop_duplicates()
+
+from itertools import combinations
+from collections import Counter
+
+count = Counter()
+for row in orderdf['Grouped']:
+    row_list = row.split(', ')
+    count.update(Counter(combinations(row_list, 4)))
+# print(orderdf.head(20))
+for key, value in count.most_common(10):
+    print(key, value)
+
+
+

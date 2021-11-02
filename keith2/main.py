@@ -95,15 +95,15 @@ df["Grouped"] = df.groupby('Order ID')['Product'].transform(lambda x: ', '.join(
 
 df = df[['Order ID', 'Grouped']].drop_duplicates()
 
-# from itertools import combinations
-# from collections import Counter
-# count = Counter()
-# for row in df['Grouped']:
-#     row_list = row.split(',')
-#     count.update(Counter(combinations(row_list, 4)))
-# print(df.head(20))
-# for key, value in count.most_common(10):
-#     print(key, value)
+from itertools import combinations
+from collections import Counter
+count = Counter()
+for row in df['Grouped']:
+    row_list = row.split(',')
+    count.update(Counter(combinations(row_list, 4)))
+print(df.head(20))
+for key, value in count.most_common(10):
+    print(key, value)
 
 quantity_ordered = all_data.groupby('Product')['Quantity Ordered'].sum()
 products = [product for product, i in all_data.groupby('Product')]
@@ -128,6 +128,4 @@ ax1.set_ylabel('Quantity ordered')
 ax2.set_ylabel('price')
 
 plt.show()
-
-# test pull keith
 
