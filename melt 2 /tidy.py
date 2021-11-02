@@ -59,6 +59,17 @@ weather_tidy = weather_melt.pivot_table(
 
 weather_tidy.reset_index(inplace=True)
 
+test1 = weather_melt[~(weather_melt["temp"].isnull())]
+testpiv = test1.pivot_table(
+    index=['id', 'year', 'month', 'day'],
+    columns='element',
+    values='temp'
+)
+
+print(test1)
+print(testpiv.reset_index())
+
+# print(weather)
 # print(weather_melt)
 # print(weather_tidy.head())
 
@@ -77,4 +88,4 @@ billboard_ratings = billboard_melt.merge(
     songs_only, on=['year', 'artist', 'track', 'time']
 )
 
-print(billboard_ratings)
+# print(billboard_ratings)

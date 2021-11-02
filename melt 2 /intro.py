@@ -14,4 +14,4 @@ print(df.info())
 country_df = df['country']
 # print(type(country_df))
 
-print(df.loc[df['year'] == 1967, ['year', 'pop']])
+print(df.loc[df['year'] == 1967, ['year', 'country', 'pop']])

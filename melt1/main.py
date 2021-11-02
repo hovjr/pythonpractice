@@ -75,7 +75,7 @@ pivtez = netflix.pivot_table(index="country",
                              aggfunc='count',
                              fill_value=0
                              )
-
-# print(pivtez)
+print(netflix)
+print(pivtez)
 
 
