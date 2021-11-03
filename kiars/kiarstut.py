@@ -4,7 +4,7 @@ import matplotlib as plt
 pd.set_option('display.width', 400)
 pd.set_option('display.max_columns', 10)
 
-from funky import Summation
+# from funky import Summation
 
 Example_Array1 = np.array([1, 2, 3])
 Example_Array2 = np.array([4, 5, 6])
@@ -37,9 +37,8 @@ mergedmofos3 = Example_df.merge(Second_Example_df, how='right')
 # print(mergedmofos2)
 # print(mergedmofos3)
 
-# print(Second_Example_df.agg('mean', axis='rows')['Second Column Data'])
-
-summedcols = Second_Example_df.agg(func=Summation, axis='columns')
+print(Second_Example_df.agg('mean', axis='rows')['Second Column Data'])
+# summedcols = Second_Example_df.agg(func=Summation, axis='columns')
 
 # .apply on individual cells
 # print(Example_df.apply(lambda x:x*3))
